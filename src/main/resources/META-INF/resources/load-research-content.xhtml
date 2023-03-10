@@ -17,14 +17,12 @@
                 </p:commandLink>
             </f:facet>
 
-            <h:outputLabel value="Content Provider"/>
+            <h:outputLabel value="Content Provider" style="margin-right: 2em; font-family: sans-serif; font-weight: bold;"
+                           for="@next"/>
 
-            <p:selectOneMenu>
+            <p:selectOneMenu model="#{loadResourceContentController.contentProviderModel}"/>
 
-
-            </p:selectOneMenu>
-
-            <p:fileUpload/>
+            <p:fileUpload label="Source Spreadsheet"/>
 
         </p:panel>
 
