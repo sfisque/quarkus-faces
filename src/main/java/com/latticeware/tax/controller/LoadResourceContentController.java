@@ -2,14 +2,12 @@ package com.latticeware.tax.controller;
 
 
 import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.primefaces.model.menu.DefaultMenuItem;
-import org.primefaces.model.menu.DefaultMenuModel;
-import org.primefaces.model.menu.MenuItem;
-import org.primefaces.model.menu.MenuModel;
 
 
 
@@ -18,13 +16,14 @@ import org.primefaces.model.menu.MenuModel;
  * @author sfisque
  */
 @Named
-@RequestScoped
+@SessionScoped
 public class LoadResourceContentController
 {
     private static final Logger LOG = Logger.getLogger( LoadResourceContentController.class.getName() );
 
     
-    private MenuModel contentProviderModel;
+    private List<String> contentProviderModel;
+    private String contentProvider;
     
     
     @PostConstruct
@@ -32,27 +31,36 @@ public class LoadResourceContentController
     {
         LOG.log( Level.INFO, "\ninitializing:: LoadResourceContentController\n" );
         
-        contentProviderModel = new DefaultMenuModel();
+        contentProviderModel = new ArrayList<>();
         
-        MenuItem sabrix = DefaultMenuItem.builder().title( "Sabrix" ).build();
-        MenuItem vertex = DefaultMenuItem.builder().title( "Vertex" ).build();
-        MenuItem other = DefaultMenuItem.builder().title( "Other" ).build();
-
-        contentProviderModel.getElements().add( sabrix );
-        contentProviderModel.getElements().add( vertex );
-        contentProviderModel.getElements().add( other );
+        
+        contentProviderModel.add( "Sabrix" );
+        contentProviderModel.add( "Vertex" );
+        contentProviderModel.add( "Other" );
     }
 
 
-    public MenuModel getContentProviderModel()
+    public List<String> getContentProviderModel()
     {
         return contentProviderModel;
     }
 
 
-    public void setContentProviderModel( MenuModel _contentProviderModel )
+    public void setContentProviderModel( List<String> _contentProviderModel )
     {
         this.contentProviderModel = _contentProviderModel;
+    }
+
+
+    public String getContentProvider()
+    {
+        return contentProvider;
+    }
+
+
+    public void setContentProvider( String _contentProvider )
+    {
+        this.contentProvider = _contentProvider;
     }
 
     

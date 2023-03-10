@@ -20,7 +20,10 @@
             <h:outputLabel value="Content Provider" style="margin-right: 2em; font-family: sans-serif; font-weight: bold;"
                            for="@next"/>
 
-            <p:selectOneMenu model="#{loadResourceContentController.contentProviderModel}"/>
+            <p:selectOneMenu dynamic="true">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItems value="#{loadResourceContentController.contentProviderModel}"/>
+            </p:selectOneMenu>
 
             <p:fileUpload label="Source Spreadsheet"/>
 
