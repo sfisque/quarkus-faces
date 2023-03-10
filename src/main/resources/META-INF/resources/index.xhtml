@@ -2,9 +2,13 @@
                 xmlns:h="jakarta.faces.html"
                 xmlns:ui="jakarta.faces.facelets"
                 xmlns:p="http://primefaces.org/ui"
-                template="template/template.xhtml">
+                template="layout.xhtml">
 
     <ui:define name="content">
+        
+        TIR
+        
+        <ui:remove>
         <div class="home">
             <div id="homepage-intro" class="introduction #{app.darkMode ? 'introduction-dark' : ''}">
                 <div class="introduction-promo">Quarkus meets Faces!</div>
@@ -58,6 +62,8 @@
                 </div>
             </div>
         </div>
+        </ui:remove>
+
     </ui:define>
 
 </ui:composition>

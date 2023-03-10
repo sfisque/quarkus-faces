@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:h="jakarta.faces.html"
+                xmlns:f="jakarta.faces.core"
+                xmlns:p="http://primefaces.org/ui"
+                template="layout.xhtml">
+
+    <ui:define name="pageTitle">Load Research Content</ui:define>
+
+    <ui:define name="content">
+
+        <p:panel header="Load Research Content">
+
+            <f:facet name="actions">
+                <p:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+                    <h:outputText styleClass="ui-icon pi pi-question"/>
+                </p:commandLink>
+            </f:facet>
+
+            <h:outputLabel value="Content Provider"/>
+
+            <p:selectOneMenu>
+
+
+            </p:selectOneMenu>
+
+            <p:fileUpload/>
+
+        </p:panel>
+
+    </ui:define>
+
+</ui:composition>

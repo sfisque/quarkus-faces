@@ -1,0 +1,29 @@
+<xml
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+      
+    <ui:composition>
+
+    <div class="mast">
+
+            <h:panelGrid columns="2" style="vertical-align: top;">
+                
+                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/">
+                    <h:graphicImage url="logo.jpg" 
+                        style="border: 0px; width:200px; height: 90px;"/>
+                </h:outputLink>
+                
+                <h:outputText value="Tax Information Repository" 
+                              style="margin-left: 2em; font-family: sans-serif; font-weight: bold; font-size: 32pt;"/>
+        
+            </h:panelGrid>
+            
+        <hr/>
+    </div>
+
+    </ui:composition>
+        
+</xml>

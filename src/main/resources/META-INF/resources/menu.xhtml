@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:p="http://primefaces.org/ui">
+    
+    <ui:fragment>
+        <p:menubar>
+            
+            <p:submenu label="System">
+                <p:menuitem value="State Defaults"
+                            outcome="state-defaults.xhtml" />
+                <p:menuitem value="Company Mapping"
+                            outcome="company-mapping.xhtml" />
+                <p:menuitem value="Billing Systems" 
+                            outcome="billing-systems.xhtml" />
+                <p:menuitem value="Charge Code Mapping"
+                            outcome="charge-code-mapping.xhtml" />
+                <p:menuitem value="" disabled="true" />
+                <p:menuitem value="Batch Status"
+                            outcome="batch-status.xhtml" />
+            </p:submenu>
+
+            <p:submenu label="Research Tools">
+                <p:menuitem value="Research Sources"
+                            outcome="research-sources.xhtml" />
+                <p:menuitem value="Tax Categories"
+                            outcome="tax-categories.xhtml" />
+                <p:menuitem value="Tax Category Bundles"
+                            outcome="tax-category-bundles.xhtml" />
+                <p:menuitem value="Research Category Mappings"
+                            outcome="research-category-mapping.xhtml" />
+                <p:menuitem value="Tax Matrix"
+                            outcome="tax-matrix.xhtml" />
+                <p:menuitem value="Load Research Content"
+                            outcome="load-research-content.xhtml" />
+            </p:submenu>
+
+            <p:submenu label="Reports">
+                <p:menuitem value="Change Log Report"
+                            outcome="change-log-report.xhtml" />
+                <p:menuitem value="Charge Code Mapping Report"
+                            outcome="charge-code-mapping-report.xhtml" />
+                <p:menuitem value="Intl Transaction Report"
+                            outcome="international-transaction-report.xhtml" />
+                <p:menuitem value="Vertex Returns Extract"
+                            outcome="vertex-returns-extract.xhtml" />
+            </p:submenu>
+            
+            <p:submenu label="Admin">
+                <p:menuitem value="Update Sabrix"
+                            outcome="update-sabrix.xhtml" />
+                <p:menuitem value="" disabled="true"/>
+                <p:menuitem value="Purge Data"
+                            outcome="purge-data.xhtml" />
+                <p:menuitem value="View TIR Logs"
+                            outcome="view-tir-logs.xhtml" />
+            </p:submenu>
+            
+            <p:menuitem value="Log Out" action="#{userController.logout}" />
+        
+        </p:menubar>     
+
+    </ui:fragment>
+</html>

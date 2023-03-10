@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <!--            <link rel="stylesheet" media="all" type="text/css" 
+                              href="#{facesContext.externalContext.requestContextPath}/css/main.css" />-->
+            <link rel="stylesheet" media="print" type="text/css" 
+                  href="#{facesContext.externalContext.requestContextPath}/css/print.css" />
+            <!--            <link rel="stylesheet" media="screen" type="text/css" 
+                              href="#{facesContext.externalContext.requestContextPath}/css/screen.css" 
+                              />-->
+            <title><ui:insert name="pageTitle"/></title>
+        </h:head>
+        <h:body>
+            <h:form>
+                <ui:remove>                    
+                    <f:phaseListener binding="#{dungeonPhaseListener}"/>
+                </ui:remove>
+
+                <div style="width:100%">
+                    <ui:include src="header.xhtml"/>
+                </div>
+
+                <div style="width:100%">
+                    <ui:include src="menu.xhtml"/>
+                </div>
+
+                <div style="width:100%">
+                    <ui:insert name="content"/>
+                </div>
+
+                <div style="width:100%">
+                    <p:messages autoUpdate="true" closable="true" showDetail="true"/>
+                </div>
+
+                <div style="width:100%">
+                    <ui:include src="footer.xhtml"/>
+                </div>
+            </h:form>
+        </h:body>
+    </f:view>
+
+</html>
+
